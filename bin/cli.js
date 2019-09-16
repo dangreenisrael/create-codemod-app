@@ -10,6 +10,7 @@ const isGitClean = require('is-git-clean');
 
 const transformerDirectory = path.join(__dirname, '../', 'transforms');
 const jscodeshiftExecutable = require.resolve('.bin/jscodeshift');
+const { TRANSFORMER_INQUIRER_CHOICES } = require('../config/codemod-config');
 
 function checkGitStatus(force) {
   let clean = false;
@@ -108,73 +109,6 @@ function runTransform({ files, flags, parser, transformer, answers }) {
     throw result.error;
   }
 }
-
-const TRANSFORMER_INQUIRER_CHOICES = [
-  {
-    name:
-      'rename-unsafe-lifecycles: Adds "UNSAFE_" prefix for renamed lifecycle hooks.',
-    value: 'rename-unsafe-lifecycles',
-  },
-  {
-    name: 'class: Convert React.createClass(...) calls to ES6 classes',
-    value: 'class',
-  },
-  {
-    name:
-      'create-element-to-jsx: Convert React.createElement(...) calls to JSX',
-    value: 'create-element-to-jsx',
-  },
-  {
-    name:
-      'error-boundaries: Renames unstable_handleError lifecycle hook to componentDidCatch',
-    value: 'error-boundaries',
-  },
-  {
-    name:
-      'findDOMNode: Updates this.getDOMNode() or this.refs.foo.getDOMNode() calls to React.findDOMNode(foo)',
-    value: 'findDOMNode',
-  },
-  {
-    name:
-      'manual-bind-to-arrow: Converts `this.f = this.f.bind(this)` to `f = () => {}`',
-    value: 'manual-bind-to-arrow',
-  },
-  {
-    name:
-      'pure-component: Converts class components with only simple properties to Functional Components',
-    value: 'pure-component',
-  },
-  {
-    name:
-      'pure-render-mixin: Removes PureRenderMixin and inlines shouldComponentUpdate',
-    value: 'pure-render-mixin',
-  },
-  {
-    name:
-      'React-DOM-to-react-dom-factories: Converts React.DOM.<element>(...) to React.createElement(element, ...)',
-    value: 'React-DOM-to-react-dom-factories',
-  },
-  {
-    name:
-      'react-to-react-dom: Updates code for the split of the react and react-dom packages',
-    value: 'react-to-react-dom',
-  },
-  {
-    name:
-      'React-PropTypes-to-prop-types: Replaces React.PropTypes references with prop-types',
-    value: 'React-PropTypes-to-prop-types',
-  },
-  {
-    name:
-      'ReactNative-View-propTypes: Replaces View.propTypes references with ViewPropTypes (for ReactNative 44+) ',
-    value: 'ReactNative-View-propTypes',
-  },
-  {
-    name:
-      'Reorders React component methods to match the ESLint react/sort-comp rule.',
-    value: 'sort-comp',
-  },
-];
 
 const PARSER_INQUIRER_CHOICES = [
   {

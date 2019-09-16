@@ -8,7 +8,8 @@
     "test": "jest",
     "prepublish": "npm run test",
     "jscodeshift": "jscodeshift",
-    "prettify": "prettier --write {bin,transforms}/{*,**/*}"
+    "prettify": "prettier --write {bin,transforms}/{*,**/*}",
+    "generate-codemod": "plop"
   },
   "dependencies": {
     "chalk": "^2.4.2",
@@ -17,7 +18,8 @@
     "inquirer": "^7.0.0",
     "is-git-clean": "^1.1.0",
     "jscodeshift": "^0.6.4",
-    "meow": "^5.0.0"
+    "meow": "^5.0.0",
+    "plop": "^2.4.0"
   },
   "jest": {
     "globals": {
