@@ -1,0 +1,39 @@
+{
+  "name": "create-codemod",
+  "version": "0.0.1",
+  "description": "Generate codemod scripts",
+  "license": "BSD-3-Clause",
+  "repository": "dangreenisrael/create-codemod",
+  "scripts": {
+    "test": "jest",
+    "prepublish": "npm run test",
+    "jscodeshift": "jscodeshift",
+    "prettify": "prettier --write {bin,transforms}/{*,**/*}"
+  },
+  "dependencies": {
+    "chalk": "^2.4.2",
+    "execa": "^2.0.4",
+    "globby": "^10.0.1",
+    "inquirer": "^7.0.0",
+    "is-git-clean": "^1.1.0",
+    "jscodeshift": "^0.6.4",
+    "meow": "^5.0.0"
+  },
+  "jest": {
+    "globals": {
+      "baseDir": "../"
+    },
+    "testEnvironment": "node",
+    "roots": [
+      "transforms",
+      "bin"
+    ]
+  },
+  "devDependencies": {
+    "jest": "^24.9.0",
+    "prettier": "^1.18.2"
+  },
+  "bin": {
+    "create-codemod": "./bin/create-codemod.js"
+  }
+}
