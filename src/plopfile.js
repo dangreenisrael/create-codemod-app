@@ -1,7 +1,9 @@
 module.exports = function(plop) {
+  const userAppRoot = process.env.PWD;
   // create your generators here
-  plop.setGenerator('basics', {
+  plop.setGenerator('add-transform', {
     description: 'application controller logic',
+    abortOnFail: true,
     prompts: [
       {
         type: 'input',
@@ -17,45 +19,41 @@ module.exports = function(plop) {
     actions: [
       {
         type: 'add',
-        path: 'transforms/{{dashCase name}}.js',
+        path: `${userAppRoot}/transforms/{{dashCase name}}.js`,
         templateFile: 'plop-templates/transform.js',
       },
       {
         type: 'add',
-        path: 'transforms/__tests__/{{dashCase name}}.js',
+        path: `${userAppRoot}/transforms/__tests__/{{dashCase name}}.js`,
         templateFile: 'plop-templates/__tests__/transform-test.js',
       },
       {
         type: 'add',
-        path:
-          'transforms/__testfixtures__/{{dashCase name}}/case-1.input.js',
+        path: `${userAppRoot}/transforms/__testfixtures__/{{dashCase name}}/case-1.input.js`,
         templateFile:
           'plop-templates/__testfixtures__/transform-tests/case-1.input.js',
       },
       {
         type: 'add',
-        path:
-          'transforms/__testfixtures__/{{dashCase name}}/case-1.output.js',
+        path: `${userAppRoot}/transforms/__testfixtures__/{{dashCase name}}/case-1.output.js`,
         templateFile:
           'plop-templates/__testfixtures__/transform-tests/case-1.output.js',
       },
       {
         type: 'add',
-        path:
-          'transforms/__testfixtures__/{{dashCase name}}/case-2.input.js',
+        path: `${userAppRoot}/transforms/__testfixtures__/{{dashCase name}}/case-2.input.js`,
         templateFile:
           'plop-templates/__testfixtures__/transform-tests/case-2.input.js',
       },
       {
         type: 'add',
-        path:
-          'transforms/__testfixtures__/{{dashCase name}}/case-2.output.js',
+        path: `${userAppRoot}/transforms/__testfixtures__/{{dashCase name}}/case-2.output.js`,
         templateFile:
           'plop-templates/__testfixtures__/transform-tests/case-2.output.js',
       },
       {
         type: 'modify',
-        path: 'config/codemod-config.js',
+        path: `${userAppRoot}/config/codemod-config.js`,
         pattern: /\/\* do not modify this line \*\//gi,
         templateFile: 'plop-templates/TRANSFORMER_INQUIRER_CHOICES.txt',
       },

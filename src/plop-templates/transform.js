@@ -1,4 +1,4 @@
-export default function transformer(file, api) {
+module.exports = function transformer(file, api) {
   const j = api.jscodeshift;
 
   return j(file.source)
@@ -7,4 +7,4 @@ export default function transformer(file, api) {
       node = node;
     })
     .toSource();
-}
+};

@@ -1,4 +1,4 @@
-This directory (bin/*) is heavily taken from https://github.com/reactjs/react-codemod/tree/master/bin
+This directory is heavily taken from https://github.com/reactjs/react-codemod/tree/master/bin
 and is thus licensed under Facebook's license which can be found below.
 
 The rest of this project is licensed under the MIT license.

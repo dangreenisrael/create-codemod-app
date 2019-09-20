@@ -1,5 +1,3 @@
-// react-codemod optional-name-of-transform optional/path/to/src [...options]
-
 const globby = require('globby');
 const inquirer = require('inquirer');
 const meow = require('meow');
@@ -8,9 +6,11 @@ const execa = require('execa');
 const chalk = require('chalk');
 const isGitClean = require('is-git-clean');
 
-const transformerDirectory = path.join(__dirname, '../', 'transforms');
+const baseDir = process.env.CODEMOD_DIRECTORY;
+const transformerDirectory = path.join(baseDir, '/transforms');
 const jscodeshiftExecutable = require.resolve('.bin/jscodeshift');
-const { TRANSFORMER_INQUIRER_CHOICES } = require('../config/codemod-config');
+const { TRANSFORMER_INQUIRER_CHOICES } = require(baseDir +
+  '/config/codemod-config');
 
 function checkGitStatus(force) {
   let clean = false;

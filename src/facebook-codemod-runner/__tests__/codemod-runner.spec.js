@@ -22,9 +22,9 @@ const {
   runTransform,
   jscodeshiftExecutable,
   transformerDirectory,
-} = require('../cli');
+} = require('../codemod-runner');
 
-const checkGitStatus = require('../cli').checkGitStatus;
+const checkGitStatus = require('../codemod-runner').checkGitStatus;
 
 describe('check-git-status', () => {
   it('does not exit and output any logs when git repo is clean', () => {

@@ -1,4 +1,4 @@
-export default function transformer(file, api) {
+module.exports = function transformer(file, api) {
   const j = api.jscodeshift;
 
   const reverse = path =>
@@ -15,4 +15,4 @@ export default function transformer(file, api) {
     .find(j.Identifier)
     .forEach(reverse)
     .toSource();
-}
+};
