@@ -1,5 +1,5 @@
 {
-  "name": "create-codemod-project",
+  "name": "create-codemod-app",
   "version": "0.0.1",
   "description": "Create Codemod",
   "license": "MIT",
@@ -37,7 +37,8 @@
     "prettier": "^1.18.2"
   },
   "bin": {
-    "create-codemod-library:generate": "./bin/codemod-generator.js"
+    "create-codemod-app:generate": "./bin/codemod-generator.js",
+    "create-codemod-app": "./bin/create-codemod-app.js"
   },
   "main": "src/facebook-codemod-runner/codemod-runner"
 }

@@ -3,6 +3,8 @@
 const inquirer = require('inquirer');
 const console = require('console');
 const chalk = require('chalk');
+const modit = require('../src/modit');
+
 async function getNameAndDescription() {
   const anwsers = await inquirer.prompt([
     { name: 'name', message: "what is the codemod's slug?" },
@@ -15,7 +17,7 @@ async function run() {
   const nodePlop = require('node-plop');
   const { name, description } = await getNameAndDescription();
   // load an instance of plop from a plopfile
-  const plop = nodePlop(__dirname + `/../src/plopfile.js`);
+  const plop = nodePlop(__dirname + `/../src/plop-new-codemod.js`);
   // get a generator by name
   const basicAdd = plop.getGenerator('add-transform');
 
@@ -26,7 +28,11 @@ async function run() {
     console.log(output);
     process.exit(1);
   }
-  console.log(output);
+
+  const userAppRoot = process.env.PWD;
+  const codemodConfigPath = userAppRoot + '/config/codemod-config.js';
+  modit(codemodConfigPath, name.replace(' ', '-'), description);
+  console.log(chalk.green('Success!!!'));
 }
 
 run();
