@@ -7,35 +7,35 @@ module.exports = function(plop) {
     actions: [
       {
         type: 'add',
-        path: `${userAppRoot}/transforms/{{dashCase name}}.js`,
+        path: `${userAppRoot}/transforms/{{name}}.js`,
         templateFile: 'new-codemod-templates/transform.js',
       },
       {
         type: 'add',
-        path: `${userAppRoot}/transforms/__tests__/{{dashCase name}}.js`,
-        templateFile: 'new-codemod-templates/__tests__/transform-test.js',
+        path: `${userAppRoot}/transforms/__tests__/{{name}}.js`,
+        templateFile: 'new-codemod-templates/__tests__/transform-test.js.txt',
       },
       {
         type: 'add',
-        path: `${userAppRoot}/transforms/__testfixtures__/{{dashCase name}}/case-1.input.js`,
+        path: `${userAppRoot}/transforms/__testfixtures__/{{name}}/case-1.input.js`,
         templateFile:
           'new-codemod-templates/__testfixtures__/transform-tests/case-1.input.js',
       },
       {
         type: 'add',
-        path: `${userAppRoot}/transforms/__testfixtures__/{{dashCase name}}/case-1.output.js`,
+        path: `${userAppRoot}/transforms/__testfixtures__/{{name}}/case-1.output.js`,
         templateFile:
           'new-codemod-templates/__testfixtures__/transform-tests/case-1.output.js',
       },
       {
         type: 'add',
-        path: `${userAppRoot}/transforms/__testfixtures__/{{dashCase name}}/case-2.input.js`,
+        path: `${userAppRoot}/transforms/__testfixtures__/{{name}}/case-2.input.js`,
         templateFile:
           'new-codemod-templates/__testfixtures__/transform-tests/case-2.input.js',
       },
       {
         type: 'add',
-        path: `${userAppRoot}/transforms/__testfixtures__/{{dashCase name}}/case-2.output.js`,
+        path: `${userAppRoot}/transforms/__testfixtures__/{{name}}/case-2.output.js`,
         templateFile:
           'new-codemod-templates/__testfixtures__/transform-tests/case-2.output.js',
       },

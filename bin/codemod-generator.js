@@ -4,11 +4,20 @@ const inquirer = require('inquirer');
 const console = require('console');
 const chalk = require('chalk');
 const modit = require('../src/modit');
+const { validateSlug, validateSentence } = require('./utils');
 
 async function getNameAndDescription() {
   const anwsers = await inquirer.prompt([
-    { name: 'name', message: "what is the codemod's slug?" },
-    { name: 'description', message: 'what will the codemod do?' },
+    {
+      name: 'name',
+      message: "what is the codemod's slug?",
+      validate: validateSlug,
+    },
+    {
+      name: 'description',
+      message: 'what will the codemod do?',
+      validate: validateSentence,
+    },
   ]);
   return anwsers;
 }
@@ -32,7 +41,7 @@ async function run() {
   const userAppRoot = process.env.PWD;
   const codemodConfigPath = userAppRoot + '/config/codemod-config.js';
   modit(codemodConfigPath, name.replace(' ', '-'), description);
-  console.log(chalk.green('Success!!!'));
+  console.log(`\n '${name}' codemod created`);
 }
 
 run();

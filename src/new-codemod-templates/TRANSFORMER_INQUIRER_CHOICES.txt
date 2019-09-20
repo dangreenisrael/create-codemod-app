@@ -1,5 +1,5 @@
 {
     name: '{{description}}',
-    value: '{{dashCase name}}',
+    value: '{{name}}',
   },
   /* do not modify this line */

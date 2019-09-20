@@ -1,16 +1,14 @@
 {
   "name": "create-codemod-app",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Create Codemod",
   "license": "MIT",
-  "repository": "dangreenisrael/create-codemod",
+  "repository": "dangreenisrael/create-codemod-app",
   "scripts": {
     "test": "jest",
     "prepublish": "npm run test",
     "jscodeshift": "jscodeshift",
-    "prettify": "prettier --write {bin,transforms}/{*,**/*}",
-    "generate-codemod": "plop",
-    "run-codemod": "./bin/create-codemod.js"
+    "prettify": "prettier --write {bin,transforms}/{*,**/*}"
   },
   "dependencies": {
     "chalk": "^2.4.2",
@@ -26,11 +24,7 @@
     "globals": {
       "baseDir": "../"
     },
-    "testEnvironment": "node",
-    "roots": [
-      "transforms",
-      "bin"
-    ]
+    "testEnvironment": "node"
   },
   "devDependencies": {
     "jest": "^24.9.0",
