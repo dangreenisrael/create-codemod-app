@@ -1,0 +1,17 @@
+{
+  "name": "example-codemod-app",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "test": "jest",
+    "generate-codemod": "create-codemod-app:generate; yarn test"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "create-codemod-app": "^0.0.1",
+    "jest": "^24.9.0",
+    "jscodeshift": "0.6.4"
+  },
+  "bin": "./bin/run-codemod.js"
+}

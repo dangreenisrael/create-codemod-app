@@ -6,7 +6,8 @@ const execa = require('execa');
 const chalk = require('chalk');
 const isGitClean = require('is-git-clean');
 
-const baseDir = process.env.CODEMOD_DIRECTORY || process.cwd();
+const baseDir =
+  process.env.CODEMOD_DIRECTORY || process.cwd() + '/example-codemod-app';
 const transformerDirectory = path.join(baseDir, '/transforms');
 const jscodeshiftExecutable = require.resolve('.bin/jscodeshift');
 const { TRANSFORMER_INQUIRER_CHOICES } = require(baseDir +
