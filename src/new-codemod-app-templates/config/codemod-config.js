@@ -1,0 +1,1 @@
+module.exports.TRANSFORMER_INQUIRER_CHOICES = [];

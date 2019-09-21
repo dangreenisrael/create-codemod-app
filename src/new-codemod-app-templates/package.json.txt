@@ -1,5 +1,5 @@
 {
-  "name": "example-codemod-app",
+  "name": "{{packageName}}",
   "version": "1.0.0",
   "description": "",
   "scripts": {
