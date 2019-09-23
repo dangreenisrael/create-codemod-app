@@ -8,7 +8,7 @@ module.exports = function(plop) {
       {
         type: 'add',
         path: `${currentDir}/{{packageName}}/.gitignore`,
-        templateFile: 'new-codemod-app-templates/.gitignore',
+        templateFile: 'new-codemod-app-templates/gitignore.txt',
       },
       {
         type: 'add',
